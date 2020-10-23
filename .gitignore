@@ -1,0 +1,8 @@
+# IDE files.
+/.idea
+
+# Project files.
+/coverage
+/npm-debug.log
+/lib
+/node_modules

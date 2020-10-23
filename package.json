@@ -1,0 +1,75 @@
+{
+  "name": "node-sass-conditional-importer",
+  "version": "0.0.0-development",
+  "description": "A node-sass importer for dynamically/conditionally resolving files based on their file extension prefix.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codebymikey/node-sass-conditional-importer"
+  },
+  "author": "codebymikey",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "commit": "cz",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "eslint '{src,test}/**/*.js'",
+    "lint-fix": "npm run lint -- --fix",
+    "build": "rimraf lib && mkdirp lib && babel src/index.js -d lib",
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release",
+    "semantic-release:dry-run": "semantic-release --dry-run --no-ci"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "dynamic",
+    "dynamic import",
+    "conditional",
+    "sass dynamic import",
+    "sass conditional import",
+    "environment",
+    "extension",
+    "import",
+    "node-sass",
+    "platform",
+    "sass",
+    "sass-loader",
+    "scss",
+    "webpack"
+  ],
+  "peerDependencies": {
+    "node-sass": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@jest/globals": "^26.6.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.11.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^17.2.2",
+    "semantic-release-github-pr": "^6.0.1"
+  },
+  "dependencies": {},
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  }
+}

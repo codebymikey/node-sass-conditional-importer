@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 13
+notifications:
+  email: false
+after_success:
+  - "[[ $TRAVIS_PULL_REQUEST != 'false' ]] && npx semantic-release-github-pr"
+  - npx semantic-release --debug
+cache: npm

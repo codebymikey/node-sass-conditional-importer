@@ -198,4 +198,4 @@ node-sass-conditional-importer is MIT licensed, as found in the [LICENSE][licens
 [node-sass-json-importer]: https://github.com/pmowrer/node-sass-json-importer
 [sass-no-dynamic-imports]: https://sass-lang.com/documentation/at-rules/import#interpolation
 [sass-no-if-imports]: https://stackoverflow.com/q/13879042
-[license]: https://github.com/codebymikey/node-sass-conditional-importer/blob/master/LICENSE
+[license]: https://github.com/codebymikey/node-sass-conditional-importer/blob/master/LICENSE.md

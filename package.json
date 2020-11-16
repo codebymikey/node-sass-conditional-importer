@@ -18,6 +18,7 @@
     "build": "rimraf lib && mkdirp lib && babel src/index.js -d lib",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
+    "semantic-release:no-ci": "semantic-release --no-ci",
     "semantic-release:dry-run": "semantic-release --dry-run --no-ci"
   },
   "files": [

@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/codebymikey/node-sass-conditional-importer/compare/v2.0.0...v2.0.1) (2020-11-17)
+
+
+### Bug Fixes
+
+* **readme:** remove the travis-ci badge ([3b1187d](https://github.com/codebymikey/node-sass-conditional-importer/commit/3b1187dd191fed11fc483a792312f9fc87e191af))
+
 # [2.0.0](https://github.com/codebymikey/node-sass-conditional-importer/compare/v1.0.0...v2.0.0) (2020-11-17)
 
 

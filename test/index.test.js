@@ -83,7 +83,7 @@ describe('conditionalImporter', () => {
     });
 
     expect(result.css.toString().trim())
-      .toBe('@import http://fonts.googleapis.com/css?family=Droid+Sans;@import url(theme);@import landscape screen and (orientation: landscape)');
+      .toBe('@import "http://fonts.googleapis.com/css?family=Droid+Sans";@import url(theme);@import "landscape" screen and (orientation: landscape)');
   });
 
   test('resolve with a custom resolver', function () {

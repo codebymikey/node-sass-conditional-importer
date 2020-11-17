@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import {URL} from 'url';
 
-export default function (options = {}) {
-  return function (url, prev) {
+export default function environmentImporterGenerator(options = {}) {
+  return function environmentImporter(url, prev) {
     let candidates;
     try {
       candidates = resolveCandidates(url, prev, options, this.options);
@@ -14,16 +14,15 @@ export default function (options = {}) {
     // Find the first entry which exists.
     let fileName = candidates.find(fileExists);
 
-    if (!fileName) {
+    if (fileName) {
       // Could not resolve it, return the original url.
       return {
-        file: url,
+        file: fileName,
       };
     }
 
-    return {
-      file: fileName,
-    };
+    // If an importer does not want to handle a particular path, it should return null.
+    return null;
   };
 }
 
@@ -33,7 +32,7 @@ export default function (options = {}) {
  * @param url
  * @return {boolean}
  */
-export function isURL(url) {
+function isURL(url) {
   try {
     new URL(url);
   } catch (_) {
@@ -55,7 +54,7 @@ export function isURL(url) {
  * @param sassOptions.includePaths {string} The include path.
  * @return {[]} List of file candidates.
  */
-export function resolveCandidates(url, prev, options, sassOptions) {
+function resolveCandidates(url, prev, options, sassOptions) {
   if (isURL(url)) {
     // Nothing to do.
     return [];
@@ -92,7 +91,7 @@ export function resolveCandidates(url, prev, options, sassOptions) {
  * @param fileName
  * @return {function(*): [string, string]}
  */
-export function applyEnvironment(fileName) {
+function applyEnvironment(fileName) {
   return (environment) => {
     const dirname = path.dirname(fileName);
     // Only scss files will be suggested by this importer to enforce a convention contrary to:
@@ -115,7 +114,7 @@ export function applyEnvironment(fileName) {
  * @param path
  * @return {boolean}
  */
-export function fileExists(path) {
+function fileExists(path) {
   try {
     fs.statSync(path);
     return true;

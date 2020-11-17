@@ -6,6 +6,7 @@ their (environment) extension prefix, similar to React Native's
 
 [![npm](https://img.shields.io/npm/v/node-sass-conditional-importer.svg)](https://www.npmjs.com/package/node-sass-conditional-importer)
 [![build status](https://travis-ci.org/codebymikey/node-sass-conditional-importer.svg?branch=master)](https://travis-ci.org/codebymikey/node-sass-conditional-importer)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/codebymikey/node-sass-conditional-importer/coverage.svg?style=flat-square)](https://codecov.io/gh/codebymikey/node-sass-conditional-importer/)
 
 It reads in a list of `environments` extension prefixes, which it'll attempt to use over the default file.
 

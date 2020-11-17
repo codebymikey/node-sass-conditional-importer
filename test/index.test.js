@@ -4,6 +4,8 @@ import sass from 'node-sass';
 import path from 'path';
 
 import conditionalImporter from '../src';
+// Test both commonjs and ES6 import compatibility.
+const conditionalImporterCommonJS = require('../src');
 
 describe('conditionalImporter', () => {
   test('resolves the development _style.scss partial', function () {
@@ -127,7 +129,7 @@ describe('conditionalImporter', () => {
         file: './test/fixtures/partials/main.scss',
         outputStyle: 'compressed',
         importer: [
-          conditionalImporter({
+          conditionalImporterCommonJS({
             // Pass in a string.
             environments: 'production',
           }),
